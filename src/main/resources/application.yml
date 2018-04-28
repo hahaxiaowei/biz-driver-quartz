@@ -1,0 +1,59 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: SPRING-BOOT-QUARTZ-MANAGE
+  jmx:
+    enabled: false
+druid:
+  names: ecodb,edmdb
+  jdbc:
+    driveClassName: com.mysql.jdbc.Driver
+    jdbcUrl: jdbc:mysql://10.3.98.153:3306/biz_quartz?useSSL=true
+    jdbcUsername: ruixin
+    jdbcPassword: Huntkey11!
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 3
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBrowwon: false
+    testOnReturn: false
+    filters: stat,wall
+  ecodb:
+    driveClassName: com.mysql.jdbc.Driver
+    filters: stat,wall
+    initialSize: 1
+    jdbcPassword: Huntkey11!
+    jdbcUrl: jdbc:mysql://10.3.98.153:3306/ecodb?useSSL=true
+    jdbcUsername: ruixin
+    maxActive: 50
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 3
+    testOnBrowwon: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: SELECT 'x'
+  edmdb:
+    driveClassName: com.mysql.jdbc.Driver
+    filters: stat, wall
+    initialSize: 1
+    jdbcPassword: Huntkey11!
+    jdbcUrl: jdbc:mysql://10.3.98.153:3306/edmdb?useSSL=true
+    jdbcUsername: ruixin
+    maxActive: 50
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 3
+    testOnBrowwon: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: SELECT 'x'
+mybatis:
+  mapperLocations: classpath:mapper/*.xml,classpath:mapper1/*.xml

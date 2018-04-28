@@ -1,0 +1,48 @@
+#spring:
+#  cloud:
+#    config:
+#      name: biz-driver-method-plugin
+#      profile: dev
+#      uri: http://10.3.98.153:9999
+fdfs:
+  trackerList:
+  - 10.3.98.153:22122
+  - 10.3.98.154:22122
+  - 10.3.98.155:22122
+  connectTimeout: 600
+  pool:
+    maxTotal: 100
+    maxWaitMillis: 1000
+  soTimeout: 1500
+  thumbImage:
+    height: 150
+    width: 150
+baseDb:
+  ip: 10.3.98.153
+  port: 3306
+edm:
+  edmMonitorId: 6f8a46a066e211e7b2e4005056bc4879
+  edmcNameEn:
+    monitor: monitor
+  version: v1.0
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.3.98.154:1111/eureka/
+  instance:
+    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+    preferIpAddress: true
+logging:
+  config: classpath:log4j2.xml
+  level:
+    root: info
+nginxIp: http://10.3.98.154/
+redisNodes: 10.3.98.153:7000,10.3.98.153:7001,10.3.98.154:7002,10.3.98.154:7003,10.3.98.155:7004,10.3.98.155:7005
+sceo:
+  service:
+    formula_gw: http://10.3.98.153:8203/#/audit-condition-config/
+    formula_tj: http://10.3.98.153:8203/#/process-func-config/
+    workflow: http://10.3.98.153:6301
+tm:
+  manager:
+    url: http://10.3.98.155:8899/tx/manager/
